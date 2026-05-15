@@ -36,9 +36,19 @@ message DivideRequest {
 message DivideResponse {
   int32 result = 1;
 }
+
+message FibonacciRequest {
+  int32 n = 1;
+}
+
+message FibonacciResponse {
+  int32 result = 1;
+}
 service CalculatorService {
   rpc Sum(SumRequest) returns (SumResponse);
   rpc Subtract(SubtractRequest) returns (SubtractResponse);
   rpc Multiply(MultiplyRequest) returns (MultiplyResponse);
   rpc Divide(DivideRequest) returns (DivideResponse);
+  rpc Fibonacci(FibonacciRequest) returns (stream FibonacciResponse);
+
 }

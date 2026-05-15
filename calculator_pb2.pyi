@@ -59,3 +59,15 @@ class DivideResponse(_message.Message):
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: int
     def __init__(self, result: _Optional[int] = ...) -> None: ...
+
+class FibonacciRequest(_message.Message):
+    __slots__ = ("n",)
+    N_FIELD_NUMBER: _ClassVar[int]
+    n: int
+    def __init__(self, n: _Optional[int] = ...) -> None: ...
+
+class FibonacciResponse(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: int
+    def __init__(self, result: _Optional[int] = ...) -> None: ...

@@ -11,6 +11,28 @@ class CalculatorServicer(calculator_pb2_grpc.CalculatorServiceServicer):
         print(f"Sum: {request.a} + {request.b} = {result}")
         return calculator_pb2.SumResponse(result=result)
 
+    def Subtract(self, request, context):
+        result = request.a - request.b
+        print(f"Subtract: {request.a} - {request.b} = {result}")
+        return calculator_pb2.SubtractResponse(result=result)
+
+    def Multiply(self, request, context):
+        result = request.a * request.b
+        print(f"Multiply: {request.a} * {request.b} = {result}")
+        return calculator_pb2.MultiplyResponse(result=result)
+
+    def Divide(self, request, context):
+        result = request.a / request.b
+        print(f"Divide: {request.a} / {request.b} = {result}")
+        return calculator_pb2.DivideResponse(result=result)
+
+
+    def Fibonacci(self, request, context):
+        a, b = 0, 1
+        for _ in range(request.n):
+            yield calculator_pb2.FibonacciResponse(result=a)
+            a, b = b, a + b
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

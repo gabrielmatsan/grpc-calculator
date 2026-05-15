@@ -54,6 +54,11 @@ class CalculatorServiceStub(object):
                 request_serializer=calculator__pb2.DivideRequest.SerializeToString,
                 response_deserializer=calculator__pb2.DivideResponse.FromString,
                 _registered_method=True)
+        self.Fibonacci = channel.unary_stream(
+                '/calculator.CalculatorService/Fibonacci',
+                request_serializer=calculator__pb2.FibonacciRequest.SerializeToString,
+                response_deserializer=calculator__pb2.FibonacciResponse.FromString,
+                _registered_method=True)
 
 
 class CalculatorServiceServicer(object):
@@ -83,6 +88,12 @@ class CalculatorServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Fibonacci(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CalculatorServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -105,6 +116,11 @@ def add_CalculatorServiceServicer_to_server(servicer, server):
                     servicer.Divide,
                     request_deserializer=calculator__pb2.DivideRequest.FromString,
                     response_serializer=calculator__pb2.DivideResponse.SerializeToString,
+            ),
+            'Fibonacci': grpc.unary_stream_rpc_method_handler(
+                    servicer.Fibonacci,
+                    request_deserializer=calculator__pb2.FibonacciRequest.FromString,
+                    response_serializer=calculator__pb2.FibonacciResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -215,6 +231,33 @@ class CalculatorService(object):
             '/calculator.CalculatorService/Divide',
             calculator__pb2.DivideRequest.SerializeToString,
             calculator__pb2.DivideResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Fibonacci(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/calculator.CalculatorService/Fibonacci',
+            calculator__pb2.FibonacciRequest.SerializeToString,
+            calculator__pb2.FibonacciResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -14,6 +14,11 @@ def run():
 
     print(f"Response: {response.result}")
 
+    fib_request = calculator_pb2.FibonacciRequest(n=10)
+    print("Fibonacci stream:")
+    for fib_response in stub.Fibonacci(fib_request):
+        print(fib_response.result)
+
 
 if __name__ == "__main__":
     run()

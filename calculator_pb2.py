@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x63\x61lculator.proto\x12\ncalculator\"\"\n\nSumRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\x1d\n\x0bSumResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"\'\n\x0fSubtractRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\"\n\x10SubtractResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"\'\n\x0fMultiplyRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\"\n\x10MultiplyResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"%\n\rDivideRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\" \n\x0e\x44ivideResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\x32\x9a\x02\n\x11\x43\x61lculatorService\x12\x36\n\x03Sum\x12\x16.calculator.SumRequest\x1a\x17.calculator.SumResponse\x12\x45\n\x08Subtract\x12\x1b.calculator.SubtractRequest\x1a\x1c.calculator.SubtractResponse\x12\x45\n\x08Multiply\x12\x1b.calculator.MultiplyRequest\x1a\x1c.calculator.MultiplyResponse\x12?\n\x06\x44ivide\x12\x19.calculator.DivideRequest\x1a\x1a.calculator.DivideResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x63\x61lculator.proto\x12\ncalculator\"\"\n\nSumRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\x1d\n\x0bSumResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"\'\n\x0fSubtractRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\"\n\x10SubtractResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"\'\n\x0fMultiplyRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\"\"\n\x10MultiplyResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"%\n\rDivideRequest\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\t\n\x01\x62\x18\x02 \x01(\x05\" \n\x0e\x44ivideResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\"\x1d\n\x10\x46ibonacciRequest\x12\t\n\x01n\x18\x01 \x01(\x05\"#\n\x11\x46ibonacciResponse\x12\x0e\n\x06result\x18\x01 \x01(\x05\x32\xe6\x02\n\x11\x43\x61lculatorService\x12\x36\n\x03Sum\x12\x16.calculator.SumRequest\x1a\x17.calculator.SumResponse\x12\x45\n\x08Subtract\x12\x1b.calculator.SubtractRequest\x1a\x1c.calculator.SubtractResponse\x12\x45\n\x08Multiply\x12\x1b.calculator.MultiplyRequest\x1a\x1c.calculator.MultiplyResponse\x12?\n\x06\x44ivide\x12\x19.calculator.DivideRequest\x1a\x1a.calculator.DivideResponse\x12J\n\tFibonacci\x12\x1c.calculator.FibonacciRequest\x1a\x1d.calculator.FibonacciResponse0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,6 +47,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DIVIDEREQUEST']._serialized_end=290
   _globals['_DIVIDERESPONSE']._serialized_start=292
   _globals['_DIVIDERESPONSE']._serialized_end=324
-  _globals['_CALCULATORSERVICE']._serialized_start=327
-  _globals['_CALCULATORSERVICE']._serialized_end=609
+  _globals['_FIBONACCIREQUEST']._serialized_start=326
+  _globals['_FIBONACCIREQUEST']._serialized_end=355
+  _globals['_FIBONACCIRESPONSE']._serialized_start=357
+  _globals['_FIBONACCIRESPONSE']._serialized_end=392
+  _globals['_CALCULATORSERVICE']._serialized_start=395
+  _globals['_CALCULATORSERVICE']._serialized_end=753
 # @@protoc_insertion_point(module_scope)
