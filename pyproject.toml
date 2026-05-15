@@ -8,3 +8,25 @@ dependencies = [
     "grpcio>=1.80.0",
     "grpcio-tools>=1.80.0",
 ]
+
+[tool.pylint.MASTER]
+ignore-patterns = ["^.*_pb2\\.py$", "^.*_pb2\\.pyi$", "^.*_pb2_grpc\\.py$"]
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "arguments-differ",
+    "unused-argument",
+    "too-few-public-methods",
+]
+
+[tool.pylint.TYPECHECK]
+generated-members = ["calculator_pb2.*", "calculator_pb2_grpc.*"]
+
+[dependency-groups]
+dev = [
+    "grpc-stubs>=1.53.0.6",
+    "types-protobuf>=7.34.1.20260508",
+]
